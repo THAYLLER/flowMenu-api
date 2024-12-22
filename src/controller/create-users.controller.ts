@@ -20,8 +20,8 @@ const CreateUserSchema = z.object({
 
 type CreateUserDto = z.infer<typeof CreateUserSchema>;
 
-@Controller('/users')
-export class CreateUsersControoler {
+@Controller('/auth')
+export class CreateUsersController {
   constructor(private prisma: PrismaService) {}
 
   @Post('/create')

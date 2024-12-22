@@ -10,11 +10,9 @@ async function bootstrap() {
     // logger: false
   });
 
-  //const configService = app.get(ConfigService);
-  //const port = configService.get('PORT');
+  const configService: ConfigService<Env> = app.get(ConfigService);
+  const port = configService.get('PORT', { infer: true });
   
-
-
-  await app.listen(3333);
+  await app.listen(port);
 }
 bootstrap();
